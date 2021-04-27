@@ -1,37 +1,33 @@
 #include "priority_queue.h"
 
 int main(void) {
+    // file_read;
+
+    pq *a = create_pq();
+
     int size;
     scanf("%d", &size);
 
-    node *input[size];
+    int input_arr[size];
     for (int i = 0; i < size; i++) {
-        input[i] = (node *)malloc(sizeof(node));
+        scanf("%d", &input_arr[i]);
     }
-
-    for (int i = 0; i < size; i++) {
-        scanf("%d%d%d", &(input[i]->state_number), &(input[i]->value), &(input[i]->parent));
-    }
-
-    pq *head = init_pq();
-    input_pq(head, size, input);
-
+    input_pq(a, size, input_arr);
+    
     printf("Heap: ");
-    for (int i = 0; i < head->size; i++) {
-        printf("%d %d, ", head->arr[i]->state_number, head->arr[i]->value);
+    for (int i = 0; i < a->size; i++) {
+        printf("%d ", a->arr[i]);
     }
     printf("\n");
-    printf("size: %d\n\n", head->size);
+    printf("size: %d\n", a->size);
 
-    node *top = pop(head);
-    printf("pop: %d %d\n\n", top->state_number, top->value);
-
+    printf("pop: %d\n", pop(a));
     printf("Heap: ");
-    for (int i = 0; i < head->size; i++) {
-        printf("%d %d, ", head->arr[i]->state_number, head->arr[i]->value);
+    for (int i = 0; i < a->size; i++) {
+        printf("%d ", a->arr[i]);
     }
     printf("\n");
-    printf("size: %d\n", head->size);
+    printf("size: %d\n", a->size);
 
     return 0;
 }
