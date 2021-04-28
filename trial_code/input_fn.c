@@ -54,7 +54,8 @@ node *add_Child(node *n, int state_number, int value, int parent)
 //traversal way fn
 //comparator fn
 
-void traverseTree(node *root)
+//depth first traversal
+void traverseTreeDepthFirst(node *root)
 {
     if (root == NULL)
         return;
@@ -63,7 +64,7 @@ void traverseTree(node *root)
     {
         printf("%d %d %d\n", root->state_number, root->value, root->parent);
         if (root->child)
-            traverseTree(root->child);
+            traverseTreeDepthFirst(root->child);
         root = root->next;
     }
     return;
@@ -128,5 +129,5 @@ int main()
         }
         array[i] = add_Child(array[array[i]->parent - 1], array[i]->state_number, array[i]->value, array[i]->parent);
     }
-    traverseTree(array[0]);
+    traverseTreeDepthFirst(array[0]);
 }
