@@ -57,7 +57,7 @@ void sift_up(pq *PQ, int id)
 void sift_down(pq *PQ, int id)
 {
 	int last = PQ->size;
-	int child = 2 * id + 1;	// Right child
+	int child = 2 * id + 1;	// Left child
 
 	while (child < last) {
 		if (child + 1 < last && node_comparator(PQ->heap[child + 1], PQ->heap[child])) child++;
