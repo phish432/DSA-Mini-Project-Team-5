@@ -13,10 +13,10 @@ int main(void) {
         scanf("%d%d%d", &(input[i]->state_number), &(input[i]->value), &(input[i]->parent));
     }
 
-    tree *root = init_tree();
-    create_tree(root, size, input);
+    tree *T = init_tree();
+    create_tree(T, size, input);
 
-    print_tree(root);
+    print_tree(T);
 
     return 0;
 }

@@ -3,17 +3,18 @@
 
 #include "../node/node.h"
 
-#define MAX_TREE_SIZE 1000
+#define MAX_TREE_SIZE 100005
 
 typedef struct tree tree;
 
 struct tree {
-    int number_of_nodes;
-    node *nodes[MAX_TREE_SIZE];
+	int size;
+	node *nodes[MAX_TREE_SIZE];
 };
 
-tree *init_tree();
-void create_tree(tree *root, int size, node *input[]);
-void print_tree(tree *root);
+tree *init_tree();	// Initializes tree
+void create_tree(tree *T, int size, node input[]);	// Creates a tree from a given input array
+void print_tree(tree *T);	// Printing the tree
+void destroy_tree(tree *T);
 
 #endif
