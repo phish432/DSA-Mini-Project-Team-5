@@ -2,6 +2,11 @@
 
 int main(int argc, char *argv[])
 {
+	if (strcmp(argv[1], "dfs") != 0 && strcmp(argv[1], "bfs") != 0 && strcmp(argv[1], "greedy") != 0) {
+		printf("Enter the traversal from dfs, bfs, greedy\nIn the format\n\t\t./a.out dfs\n# Refer README.md for more info #\n");
+		return 0;
+	}
+
 	flag = (char *)malloc(7 * sizeof(char));
 	T = init_tree();
 
